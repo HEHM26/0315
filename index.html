@@ -39,6 +39,11 @@ $(document).ready(function(){
     console.log('starting...');
   }
   
+  $('#qrcodeBtn').on('click', function(){
+    if (DEBUG) console.log("qrcodeBtn...... ");
+	   makeCode();   
+    }) // end of txbuilder
+  
   $('#send').on('click', function(){
     if (DEBUG) console.log('send...');
 
@@ -70,9 +75,6 @@ $(document).ready(function(){
       } //end of try
   
     }) // end of txbuilder
-	
-	
-	
 	
 	
    })
@@ -121,36 +123,46 @@ $(document).ready(function(){
 </head>
 
 <body>
-  <br>
-  <br>
-  <div class="container " role="main">
-    <h2><strong> 비트코인 전자기갑 </strong></h2>
-  	<div id="tablePlace"></div>
-	<button id="newAccount">New Account</button>
-	<button id="check">잔액확인</button>
-	<button id="send">송금하기</button>
-  </div>
-  <br>
-  <h5>송신처  <input id="fromaddress" size="45" value="16ufD7ejtJNZkt7XZwUDv8i7iayB9HAA3X" placeholder=""></input> </h5>
-  <br>
-  <h5>수신처  <input id="toaddress" size="45" placeholder=""></input> </h5>
-  <br>
-  <h5>코인  <input id="sendcoin" size="45" placeholder=""></input> </h5>
-  <br>
-  <h5>비밀번호 <input type="password" id="yourpw" size="65" value="L5gngh6HAz1Xu3uPXM5gavrcztqivViWn7bVAwRPUR9hsrxGA2HM" placeholder=""></input> </h5>
-  <br>
-  <div class="container " role="main">
-	<h4><strong> Message </strong></h4>
-    <div id="message"></div>
-  </div>
+	<br>
+	<br>
+	<div class="container " role="main">
+		<h2><strong> 비트코인 전자지갑 </strong></h2>
+		<div id="tablePlace"></div>
+	
+		<button id="newAccount">New Account</button>
+		<button id="check">잔액확인</button>
+		<button id="send">송금하기</button>
+		<button id="qrcodeBtn"> Create QRCode </button>
+	</div>
+	
+	<br>
+	<h5>송신처  <input id="fromaddress" size="45" value="0xb3864fd5C3F2dE686e274F7a2Be1375B0681462E" placeholder=""></input> </h5>
+	
+	<br>
+	<h5>수신처  <input id="toaddress" size="45" placeholder=""></input> </h5>
   
-  <div id="qrcode" style="width:250px; height:250px; margin-top:15px;"></div>
+	<br>
+	<h5>코인  <input id="sendcoin" size="45" placeholder=""></input> </h5>
+  
+	<br>
+	<h5>비밀번호 <input type="password" id="yourpw" size="65" value="L5gngh6HAz1Xu3uPXM5gavrcztqivViWn7bVAwRPUR9hsrxGA2HM" placeholder=""></input> </h5>
+	
+	<br>
+	
+	<div class="container " role="main">
+		<h4><strong> Message </strong></h4>
+		<div id="message"></div>
+		<div id="qrcode" style="width:250px; height:250px; margin-top:15px;"></div>
+	</div>
+  
+	<div id="qrcode" style="width:250px; height:250px; margin-top:15px;"></div>
   
 <hr>
+
 <footer class="py-5 bg-dark">
-  <div class="container">
-    <p class="m-0 text-center text-white"><b>Copyright &copy; Blocko 2020</b></p>
-  </div>
+	<div class="container">
+		<p class="m-0 text-center text-white"><b>Copyright &copy; Blocko 2020</b></p>
+	</div>
 </footer>
 </body>
 </html>
